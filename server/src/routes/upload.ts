@@ -40,6 +40,6 @@ export async function uploadRoutes(app: FastifyInstance) {
     const fullURL = request.protocol.concat("://").concat(request.hostname);
     const fileURL = new URL(`/uploads/${fileName}`, fullURL).toString();
 
-    reply.send(fileURL);
+    return { fileURL };
   });
 }
